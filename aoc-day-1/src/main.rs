@@ -18,12 +18,12 @@ async fn main() -> Result<(), Box<dyn Error>> {
             AgentReply::immediate()
         })
         .act_on::<ScrollFullyDecoded>(|agent, _context| {
-            let distance = agent.model.measure_historical_discrepancy();
-            let score = agent.model.analyze_location_correlation();
+            let _distance = agent.model.measure_historical_discrepancy();
+            let _score = agent.model.analyze_location_correlation();
             println!("\n🗿 Ancient Scroll Analysis Complete! 📜");
             println!("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
-            println!("✨ Historical Location Correlation: {score}");
-            println!("📏 Geographical Discrepancy: {distance} leagues");
+            println!("✨ Historical Location Correlation: ********");
+            println!("📏 Geographical Discrepancy: ******** leagues");
             println!("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━");
             println!(
                 "📌 The Chief Historian's findings have been recorded in the eternal archives!\n"

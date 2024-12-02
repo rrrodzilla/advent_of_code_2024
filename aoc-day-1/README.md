@@ -3,6 +3,8 @@
 A mystical application built with the Acton reactive framework to help decode
 ancient scrolls and find the lost Chief Historian through location analysis.
 
+![Made with VHS](https://vhs.charm.sh/vhs-OpQaGYIzQLJu1ZxmAHSFP.gif)
+
 ## 📜 The Story
 
 Two historians have left behind scrolls containing coordinates of possible
