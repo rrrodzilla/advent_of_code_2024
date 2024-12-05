@@ -19,18 +19,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let input = fs::read_to_string(&args[1])?;
     let grid: Grid = input.parse()?;
-
-    // The Elf watches intently as you search for the hidden XMAS words in her puzzle.
     let word_count = grid.find_word_xmas();
-    println!("\n✨ Magical Word Analysis: '\x1b[1;34mXMAS\x1b[0m' Found!");
-    println!("🔍 Total 'XMAS' Instances Found: {}", word_count);
-
-    println!("{}", "-".repeat(50));
-
-    // The Elf is even more eager to see if you can find the tricky X-MAS cross patterns.
     let cross_count = grid.find_crossed_mas();
-    println!("🧩 Cross Pattern Analysis: Searching for 'X-MAS' Crosses...");
-    println!("📌 Total 'X-MAS' Cross Patterns Found: {}\n", cross_count);
+    // The Elf watches intently as you search for the hidden XMAS words in her puzzle.
+    println!(
+        "\n✨ Magical Word Analysis: '\x1b[1;34mXMAS\x1b[0m' Found!\n🔍 Total 'XMAS' Instances Found: {}\n{}\n🧩 Cross Pattern Analysis: Searching for 'X-MAS' Crosses...\n📌 Total 'X-MAS' Cross Patterns Found: {}\n",
+        word_count,
+        "-".repeat(50),
+        cross_count
+    );
 
     Ok(())
 }
