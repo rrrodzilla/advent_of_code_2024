@@ -6,7 +6,7 @@ Set Height 650
 Set MarginFill "#674EFF"
 Set BorderRadius 10
 Sleep 500ms
-Type "cargo run --quiet --release -- "part_one.input"
+Type "time cargo run --quiet --release -- "part_one.input"
 Enter
 Sleep 15s
 Type "exit"

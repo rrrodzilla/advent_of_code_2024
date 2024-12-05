@@ -1,6 +1,11 @@
+# Ignore .data and .data.old files in all directories
 *.Identifier
-*.data
-*.data.old
+**/*.data
+**/*.data.old
+
+# Ignore direnv files
 .direnv/
 .envrc
-*/target/**
+
+# Ignore target directories
+**/target/**
