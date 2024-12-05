@@ -5,7 +5,7 @@ An efficient solution for analyzing grid patterns to identify instances of
 efficiently search and analyze recurring patterns, providing clear diagnostic
 output to better understand complex grid arrangements.
 
-![Made with VHS](https://vhs.charm.sh/vhs-iKtvujca9Jnd2p2N9CPiZ.gif)
+![Made with VHS](https://vhs.charm.sh/vhs-4kukaYgn7VHYXKSb3jd4VC.gif)
 
 ## ❄️ The Story
 
