@@ -41,7 +41,7 @@
             rustVersion = "stable";
             # Example configuration:
             # withTools =[]; # Will be prefixed with cargo-
-            #extraPackages = [ ];
+            extraPackages = [ pkgs.linuxPackages.perf ];
             # ide.type = "none";
           };
 
@@ -50,9 +50,10 @@
             buildInputs = nixpkgs.lib.flatten (
               nixpkgs.lib.attrValues config.env-packages
               ++ [
-
+                pkgs.perf-tools
                 pkgs.ttyd
                 pkgs.ffmpeg
+                pkgs.gnuplot
                 pkgs.vhs
               ]
             );

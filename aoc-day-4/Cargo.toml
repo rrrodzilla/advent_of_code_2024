@@ -1,0 +1,14 @@
+[package]
+name = "aoc-day-4"
+version = "0.1.0"
+edition = "2021"
+
+
+[dependencies]
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+
+[[bench]]
+name = "xmas_bench"
+harness = false

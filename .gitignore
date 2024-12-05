@@ -1,3 +1,5 @@
+*.Identifier
+*.data
 .direnv/
 .envrc
 */target/**
