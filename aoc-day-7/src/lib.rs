@@ -89,7 +89,18 @@ impl FromStr for BridgeEquation {
 impl BridgeEquation {
     // 🎯 Check if equation can reach target stress with available operators
     pub fn is_calibratable(&self, allow_string_join: bool) -> bool {
+        // 🚫 Bridge needs at least two support points
         if self.load_factors.len() < 2 {
+            return false;
+        }
+
+        // 🌿 Quick path through jungle for two-factor bridges
+        if self.load_factors.len() == 2 {
+            return self.check_simple_bridge(allow_string_join);
+        }
+
+        // 🏗️ Check if target stress is within possible range
+        if !self.is_within_stress_bounds(allow_string_join) {
             return false;
         }
 
@@ -139,6 +150,69 @@ impl BridgeEquation {
         }
 
         false
+    }
+
+    // 🌴 Quick check for simple two-factor bridges
+    fn check_simple_bridge(&self, allow_string_join: bool) -> bool {
+        let left = self.load_factors[0].0;
+        let right = self.load_factors[1].0;
+
+        // Check basic jungle operators
+        if left + right == self.target_stress.0 || left * right == self.target_stress.0 {
+            return true;
+        }
+
+        // Check hidden string join operator if allowed
+        if allow_string_join {
+            if let Some(joined) = JungleOperator::StringJoin.apply(left, right) {
+                if joined == self.target_stress.0 {
+                    return true;
+                }
+            }
+        }
+
+        false
+    }
+
+    // 🌿 Check if target stress is within possible jungle bounds
+    fn is_within_stress_bounds(&self, allow_string_join: bool) -> bool {
+        // 🔢 Calculate minimum stress (all additions)
+        let min_stress = self.load_factors.iter().map(|f| f.0).sum::<u64>();
+
+        // If target is below minimum possible stress, no need to check further
+        if self.target_stress.0 < min_stress {
+            return false;
+        }
+
+        // 🔢 Calculate maximum stress (all multiplications)
+        let max_product = self
+            .load_factors
+            .iter()
+            .map(|f| f.0)
+            .try_fold(1u64, |acc, x| acc.checked_mul(x))
+            .unwrap_or(u64::MAX);
+
+        // If target is above maximum multiplication, check string join only
+        if self.target_stress.0 > max_product {
+            // If string join isn't allowed or target is too large, impossible
+            if !allow_string_join {
+                return false;
+            }
+
+            // Check if target could be achieved with string joins
+            let max_digits = self
+                .load_factors
+                .iter()
+                .map(|f| f.0.to_string().len())
+                .sum::<usize>();
+
+            // If target has more digits than all factors combined, impossible
+            if self.target_stress.0.to_string().len() > max_digits {
+                return false;
+            }
+        }
+
+        true
     }
 }
 
