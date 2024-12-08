@@ -29,6 +29,7 @@ version = "0.1.0"
 dependencies = [
  "criterion",
  "memory-stats",
+ "rayon",
 ]
 
 [[package]]

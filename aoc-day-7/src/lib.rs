@@ -1,3 +1,4 @@
+use rayon::prelude::*;
 use std::num::ParseIntError;
 use std::str::FromStr;
 
@@ -115,8 +116,8 @@ impl BridgeEquation {
                     return true;
                 }
                 // Only try string join if needed
-                return allow_string_join
-                    && JungleOperator::StringJoin.apply(a, b) == Some(self.target_stress.0);
+                allow_string_join
+                    && JungleOperator::StringJoin.apply(a, b) == Some(self.target_stress.0)
             }
             3 => {
                 let (a, b, c) = (factors[0].0, factors[1].0, factors[2].0);
@@ -145,7 +146,7 @@ impl BridgeEquation {
                         }
                     }
                 }
-                return false;
+                false
             }
             _ => {
                 let operator_slots = len - 1;
@@ -155,10 +156,9 @@ impl BridgeEquation {
                     2u64.pow(operator_slots as u32) // Only + and * available
                 };
 
-                // 🧪 Test each operator combination
-                for combo in 0..possible_combinations {
+                // 🦁 Parallel jungle search for valid operator combinations
+                (0..possible_combinations).into_par_iter().any(|combo| {
                     let mut current_stress = factors[0].0;
-                    let mut equation_valid = true;
 
                     // 🔄 Apply operators in sequence
                     for i in 0..operator_slots {
@@ -182,19 +182,14 @@ impl BridgeEquation {
                         {
                             current_stress = next_stress;
                         } else {
-                            equation_valid = false;
-                            break;
+                            return false;
                         }
                     }
 
-                    if equation_valid && current_stress == self.target_stress.0 {
-                        return true;
-                    }
-                }
+                    current_stress == self.target_stress.0
+                })
             }
         }
-
-        false
     }
 }
 
