@@ -153,8 +153,48 @@ impl BridgeEquation {
                 self.check_sequential(allow_string_join)
             }
             _ => {
-                // 🦁 Parallel search only for complex jungle paths
-                self.check_parallel(allow_string_join)
+                // 🦁 Chunked parallel search for complex jungle paths
+                let operator_slots = len - 1;
+                let possible_combinations = if allow_string_join {
+                    3u64.pow(operator_slots as u32)
+                } else {
+                    2u64.pow(operator_slots as u32)
+                };
+
+                // 🌳 Split the jungle into manageable chunks
+                const CHUNK_SIZE: u64 = 1024;
+                (0..possible_combinations)
+                    .collect::<Vec<_>>()
+                    .par_chunks(CHUNK_SIZE as usize)
+                    .any(|chunk| {
+                        chunk.iter().any(|&combo| {
+                            let mut current_stress = factors[0].0;
+
+                            for i in 0..operator_slots {
+                                let operator = if allow_string_join {
+                                    match (combo / 3u64.pow(i as u32)) % 3 {
+                                        0 => JungleOperator::Sum,
+                                        1 => JungleOperator::Product,
+                                        _ => JungleOperator::StringJoin,
+                                    }
+                                } else if (combo >> i) & 1 == 0 {
+                                    JungleOperator::Sum
+                                } else {
+                                    JungleOperator::Product
+                                };
+
+                                if let Some(next_stress) =
+                                    operator.apply(current_stress, factors[i + 1].0)
+                                {
+                                    current_stress = next_stress;
+                                } else {
+                                    return false;
+                                }
+                            }
+
+                            current_stress == self.target_stress.0
+                        })
+                    })
             }
         }
     }
@@ -168,7 +208,6 @@ impl BridgeEquation {
             2u64.pow(operator_slots as u32)
         };
 
-        // 🔄 Try each operator combination
         for combo in 0..possible_combinations {
             let mut current_stress = self.load_factors[0].0;
 
@@ -199,44 +238,6 @@ impl BridgeEquation {
             }
         }
         false
-    }
-
-    // 🦁 Parallel search for complex jungle paths
-    fn check_parallel(&self, allow_string_join: bool) -> bool {
-        let operator_slots = self.load_factors.len() - 1;
-        let possible_combinations = if allow_string_join {
-            3u64.pow(operator_slots as u32)
-        } else {
-            2u64.pow(operator_slots as u32)
-        };
-
-        (0..possible_combinations).into_par_iter().any(|combo| {
-            let mut current_stress = self.load_factors[0].0;
-
-            for i in 0..operator_slots {
-                let operator = if allow_string_join {
-                    match (combo / 3u64.pow(i as u32)) % 3 {
-                        0 => JungleOperator::Sum,
-                        1 => JungleOperator::Product,
-                        _ => JungleOperator::StringJoin,
-                    }
-                } else if (combo >> i) & 1 == 0 {
-                    JungleOperator::Sum
-                } else {
-                    JungleOperator::Product
-                };
-
-                if let Some(next_stress) =
-                    operator.apply(current_stress, self.load_factors[i + 1].0)
-                {
-                    current_stress = next_stress;
-                } else {
-                    return false;
-                }
-            }
-
-            current_stress == self.target_stress.0
-        })
     }
 }
 
