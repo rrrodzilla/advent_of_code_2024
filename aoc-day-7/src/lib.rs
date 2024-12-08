@@ -94,9 +94,16 @@ impl BridgeEquation {
             return false;
         }
 
-        // 🌿 Quick path through jungle for two-factor bridges
-        if self.load_factors.len() == 2 {
-            return self.check_simple_bridge(allow_string_join);
+        // 🌿 Quick path through jungle for simple bridges
+        match self.load_factors.len() {
+            2 => return self.check_simple_bridge(allow_string_join),
+            3 => return self.check_triple_bridge(allow_string_join),
+            _ => {
+                // 🏗️ Only check bounds for complex bridges
+                if !self.is_within_stress_bounds(allow_string_join) {
+                    return false;
+                }
+            }
         }
 
         // 🏗️ Check if target stress is within possible range
@@ -151,7 +158,42 @@ impl BridgeEquation {
 
         false
     }
+    // 🌴 Optimized check for three-factor bridges
+    fn check_triple_bridge(&self, allow_string_join: bool) -> bool {
+        let a = self.load_factors[0].0;
+        let b = self.load_factors[1].0;
+        let c = self.load_factors[2].0;
 
+        // Check basic operators
+        if a + b * c == self.target_stress.0 || a * b + c == self.target_stress.0 {
+            return true;
+        }
+
+        // Check string join if allowed
+        if allow_string_join {
+            for op in &[
+                JungleOperator::Sum,
+                JungleOperator::Product,
+                JungleOperator::StringJoin,
+            ] {
+                if let Some(ab) = op.apply(a, b) {
+                    for op2 in &[
+                        JungleOperator::Sum,
+                        JungleOperator::Product,
+                        JungleOperator::StringJoin,
+                    ] {
+                        if let Some(result) = op2.apply(ab, c) {
+                            if result == self.target_stress.0 {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        false
+    }
     // 🌴 Quick check for simple two-factor bridges
     fn check_simple_bridge(&self, allow_string_join: bool) -> bool {
         let left = self.load_factors[0].0;
