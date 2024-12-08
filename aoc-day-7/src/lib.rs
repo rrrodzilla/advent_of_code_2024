@@ -107,7 +107,7 @@ impl BridgeEquation {
             return false;
         }
 
-        // 🌿 Quick check for common cases
+        // 🌿 Quick path through jungle for simple bridges
         match len {
             2 => {
                 let (a, b) = (factors[0].0, factors[1].0);
@@ -148,48 +148,95 @@ impl BridgeEquation {
                 }
                 false
             }
+            4 => {
+                // Use regular iteration for medium-sized bridges
+                self.check_sequential(allow_string_join)
+            }
             _ => {
-                let operator_slots = len - 1;
-                let possible_combinations = if allow_string_join {
-                    3u64.pow(operator_slots as u32) // Three operators available
-                } else {
-                    2u64.pow(operator_slots as u32) // Only + and * available
-                };
-
-                // 🦁 Parallel jungle search for valid operator combinations
-                (0..possible_combinations).into_par_iter().any(|combo| {
-                    let mut current_stress = factors[0].0;
-
-                    // 🔄 Apply operators in sequence
-                    for i in 0..operator_slots {
-                        let operator = if allow_string_join {
-                            // Base-3: Sum = 0, Product = 1, StringJoin = 2
-                            match (combo / 3u64.pow(i as u32)) % 3 {
-                                0 => JungleOperator::Sum,
-                                1 => JungleOperator::Product,
-                                _ => JungleOperator::StringJoin,
-                            }
-                        } else {
-                            // Base-2: Sum = 0, Product = 1
-                            if (combo >> i) & 1 == 0 {
-                                JungleOperator::Sum
-                            } else {
-                                JungleOperator::Product
-                            }
-                        };
-
-                        if let Some(next_stress) = operator.apply(current_stress, factors[i + 1].0)
-                        {
-                            current_stress = next_stress;
-                        } else {
-                            return false;
-                        }
-                    }
-
-                    current_stress == self.target_stress.0
-                })
+                // 🦁 Parallel search only for complex jungle paths
+                self.check_parallel(allow_string_join)
             }
         }
+    }
+
+    // 🏃 Sequential check for medium complexity bridges
+    fn check_sequential(&self, allow_string_join: bool) -> bool {
+        let operator_slots = self.load_factors.len() - 1;
+        let possible_combinations = if allow_string_join {
+            3u64.pow(operator_slots as u32)
+        } else {
+            2u64.pow(operator_slots as u32)
+        };
+
+        // 🔄 Try each operator combination
+        for combo in 0..possible_combinations {
+            let mut current_stress = self.load_factors[0].0;
+
+            for i in 0..operator_slots {
+                let operator = if allow_string_join {
+                    match (combo / 3u64.pow(i as u32)) % 3 {
+                        0 => JungleOperator::Sum,
+                        1 => JungleOperator::Product,
+                        _ => JungleOperator::StringJoin,
+                    }
+                } else if (combo >> i) & 1 == 0 {
+                    JungleOperator::Sum
+                } else {
+                    JungleOperator::Product
+                };
+
+                if let Some(next_stress) =
+                    operator.apply(current_stress, self.load_factors[i + 1].0)
+                {
+                    current_stress = next_stress;
+                } else {
+                    break;
+                }
+            }
+
+            if current_stress == self.target_stress.0 {
+                return true;
+            }
+        }
+        false
+    }
+
+    // 🦁 Parallel search for complex jungle paths
+    fn check_parallel(&self, allow_string_join: bool) -> bool {
+        let operator_slots = self.load_factors.len() - 1;
+        let possible_combinations = if allow_string_join {
+            3u64.pow(operator_slots as u32)
+        } else {
+            2u64.pow(operator_slots as u32)
+        };
+
+        (0..possible_combinations).into_par_iter().any(|combo| {
+            let mut current_stress = self.load_factors[0].0;
+
+            for i in 0..operator_slots {
+                let operator = if allow_string_join {
+                    match (combo / 3u64.pow(i as u32)) % 3 {
+                        0 => JungleOperator::Sum,
+                        1 => JungleOperator::Product,
+                        _ => JungleOperator::StringJoin,
+                    }
+                } else if (combo >> i) & 1 == 0 {
+                    JungleOperator::Sum
+                } else {
+                    JungleOperator::Product
+                };
+
+                if let Some(next_stress) =
+                    operator.apply(current_stress, self.load_factors[i + 1].0)
+                {
+                    current_stress = next_stress;
+                } else {
+                    return false;
+                }
+            }
+
+            current_stress == self.target_stress.0
+        })
     }
 }
 
