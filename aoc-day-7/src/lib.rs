@@ -23,6 +23,15 @@ impl JungleOperator {
             JungleOperator::Sum => left_load.checked_add(right_load),
             JungleOperator::Product => left_load.checked_mul(right_load),
             JungleOperator::StringJoin => {
+                // Fast path for common cases to avoid string allocation
+                if right_load < 10 {
+                    return left_load.checked_mul(10)?.checked_add(right_load);
+                }
+                if right_load < 100 {
+                    return left_load.checked_mul(100)?.checked_add(right_load);
+                }
+
+                // Fall back to string handling for larger numbers
                 let right_digits = right_load.to_string();
                 let decimal_shift = 10u64.checked_pow(right_digits.len() as u32)?;
                 left_load
@@ -89,172 +98,103 @@ impl FromStr for BridgeEquation {
 impl BridgeEquation {
     // 🎯 Check if equation can reach target stress with available operators
     pub fn is_calibratable(&self, allow_string_join: bool) -> bool {
+        let factors = &self.load_factors;
+        let len = factors.len();
+
         // 🚫 Bridge needs at least two support points
-        if self.load_factors.len() < 2 {
+        if len < 2 {
             return false;
         }
 
-        // 🌿 Quick path through jungle for simple bridges
-        match self.load_factors.len() {
-            2 => return self.check_simple_bridge(allow_string_join),
-            3 => return self.check_triple_bridge(allow_string_join),
-            _ => {
-                // 🏗️ Only check bounds for complex bridges
-                if !self.is_within_stress_bounds(allow_string_join) {
+        // 🌿 Quick check for common cases
+        match len {
+            2 => {
+                let (a, b) = (factors[0].0, factors[1].0);
+                // Check sum and product first (most common)
+                if a + b == self.target_stress.0 || a * b == self.target_stress.0 {
+                    return true;
+                }
+                // Only try string join if needed
+                return allow_string_join
+                    && JungleOperator::StringJoin.apply(a, b) == Some(self.target_stress.0);
+            }
+            3 => {
+                let (a, b, c) = (factors[0].0, factors[1].0, factors[2].0);
+                // Check most common patterns first
+                if a + b * c == self.target_stress.0 || a * b + c == self.target_stress.0 {
+                    return true;
+                }
+                if !allow_string_join {
                     return false;
                 }
-            }
-        }
-
-        // 🏗️ Check if target stress is within possible range
-        if !self.is_within_stress_bounds(allow_string_join) {
-            return false;
-        }
-
-        let operator_slots = self.load_factors.len() - 1;
-        let possible_combinations = if allow_string_join {
-            3u64.pow(operator_slots as u32) // Three operators available
-        } else {
-            2u64.pow(operator_slots as u32) // Only + and * available
-        };
-
-        // 🧪 Test each operator combination
-        for combo in 0..possible_combinations {
-            let mut current_stress = self.load_factors[0].0;
-            let mut equation_valid = true;
-
-            // 🔄 Apply operators in sequence
-            for i in 0..operator_slots {
-                let operator = if allow_string_join {
-                    // Base-3: Sum = 0, Product = 1, StringJoin = 2
-                    match (combo / 3u64.pow(i as u32)) % 3 {
-                        0 => JungleOperator::Sum,
-                        1 => JungleOperator::Product,
-                        _ => JungleOperator::StringJoin,
-                    }
-                } else {
-                    // Base-2: Sum = 0, Product = 1
-                    if (combo >> i) & 1 == 0 {
-                        JungleOperator::Sum
-                    } else {
-                        JungleOperator::Product
-                    }
-                };
-
-                if let Some(next_stress) =
-                    operator.apply(current_stress, self.load_factors[i + 1].0)
-                {
-                    current_stress = next_stress;
-                } else {
-                    equation_valid = false;
-                    break;
-                }
-            }
-
-            if equation_valid && current_stress == self.target_stress.0 {
-                return true;
-            }
-        }
-
-        false
-    }
-    // 🌴 Optimized check for three-factor bridges
-    fn check_triple_bridge(&self, allow_string_join: bool) -> bool {
-        let a = self.load_factors[0].0;
-        let b = self.load_factors[1].0;
-        let c = self.load_factors[2].0;
-
-        // Check basic operators
-        if a + b * c == self.target_stress.0 || a * b + c == self.target_stress.0 {
-            return true;
-        }
-
-        // Check string join if allowed
-        if allow_string_join {
-            for op in &[
-                JungleOperator::Sum,
-                JungleOperator::Product,
-                JungleOperator::StringJoin,
-            ] {
-                if let Some(ab) = op.apply(a, b) {
-                    for op2 in &[
-                        JungleOperator::Sum,
-                        JungleOperator::Product,
-                        JungleOperator::StringJoin,
-                    ] {
-                        if let Some(result) = op2.apply(ab, c) {
-                            if result == self.target_stress.0 {
+                // Only check string join combinations if needed
+                for op1 in [
+                    JungleOperator::Sum,
+                    JungleOperator::Product,
+                    JungleOperator::StringJoin,
+                ] {
+                    if let Some(ab) = op1.apply(a, b) {
+                        for op2 in [
+                            JungleOperator::Sum,
+                            JungleOperator::Product,
+                            JungleOperator::StringJoin,
+                        ] {
+                            if op2.apply(ab, c) == Some(self.target_stress.0) {
                                 return true;
                             }
                         }
                     }
                 }
+                return false;
             }
-        }
+            _ => {
+                let operator_slots = len - 1;
+                let possible_combinations = if allow_string_join {
+                    3u64.pow(operator_slots as u32) // Three operators available
+                } else {
+                    2u64.pow(operator_slots as u32) // Only + and * available
+                };
 
-        false
-    }
-    // 🌴 Quick check for simple two-factor bridges
-    fn check_simple_bridge(&self, allow_string_join: bool) -> bool {
-        let left = self.load_factors[0].0;
-        let right = self.load_factors[1].0;
+                // 🧪 Test each operator combination
+                for combo in 0..possible_combinations {
+                    let mut current_stress = factors[0].0;
+                    let mut equation_valid = true;
 
-        // Check basic jungle operators
-        if left + right == self.target_stress.0 || left * right == self.target_stress.0 {
-            return true;
-        }
+                    // 🔄 Apply operators in sequence
+                    for i in 0..operator_slots {
+                        let operator = if allow_string_join {
+                            // Base-3: Sum = 0, Product = 1, StringJoin = 2
+                            match (combo / 3u64.pow(i as u32)) % 3 {
+                                0 => JungleOperator::Sum,
+                                1 => JungleOperator::Product,
+                                _ => JungleOperator::StringJoin,
+                            }
+                        } else {
+                            // Base-2: Sum = 0, Product = 1
+                            if (combo >> i) & 1 == 0 {
+                                JungleOperator::Sum
+                            } else {
+                                JungleOperator::Product
+                            }
+                        };
 
-        // Check hidden string join operator if allowed
-        if allow_string_join {
-            if let Some(joined) = JungleOperator::StringJoin.apply(left, right) {
-                if joined == self.target_stress.0 {
-                    return true;
+                        if let Some(next_stress) = operator.apply(current_stress, factors[i + 1].0)
+                        {
+                            current_stress = next_stress;
+                        } else {
+                            equation_valid = false;
+                            break;
+                        }
+                    }
+
+                    if equation_valid && current_stress == self.target_stress.0 {
+                        return true;
+                    }
                 }
             }
         }
 
         false
-    }
-
-    // 🌿 Check if target stress is within possible jungle bounds
-    fn is_within_stress_bounds(&self, allow_string_join: bool) -> bool {
-        // 🔢 Calculate minimum stress (all additions)
-        let min_stress = self.load_factors.iter().map(|f| f.0).sum::<u64>();
-
-        // If target is below minimum possible stress, no need to check further
-        if self.target_stress.0 < min_stress {
-            return false;
-        }
-
-        // 🔢 Calculate maximum stress (all multiplications)
-        let max_product = self
-            .load_factors
-            .iter()
-            .map(|f| f.0)
-            .try_fold(1u64, |acc, x| acc.checked_mul(x))
-            .unwrap_or(u64::MAX);
-
-        // If target is above maximum multiplication, check string join only
-        if self.target_stress.0 > max_product {
-            // If string join isn't allowed or target is too large, impossible
-            if !allow_string_join {
-                return false;
-            }
-
-            // Check if target could be achieved with string joins
-            let max_digits = self
-                .load_factors
-                .iter()
-                .map(|f| f.0.to_string().len())
-                .sum::<usize>();
-
-            // If target has more digits than all factors combined, impossible
-            if self.target_stress.0.to_string().len() > max_digits {
-                return false;
-            }
-        }
-
-        true
     }
 }
 
