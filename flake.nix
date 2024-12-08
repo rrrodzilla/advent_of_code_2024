@@ -55,6 +55,9 @@
                 pkgs.ffmpeg
                 pkgs.gnuplot
                 pkgs.vhs
+                pkgs.kcachegrind
+                pkgs.graphviz
+                pkgs.valgrind
               ]
             );
             shellHook = nixpkgs.lib.concatStringsSep "\n" (nixpkgs.lib.attrValues config.env-hooks);
