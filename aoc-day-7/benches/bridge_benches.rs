@@ -1,7 +1,6 @@
 use aoc_day_7::{BridgeCalibrator, BridgeEquation};
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use memory_stats::memory_stats;
-use std::time::Duration;
 
 // 📊 Load actual engineering specifications from file
 fn load_engineering_specs() -> String {
@@ -88,32 +87,27 @@ fn bench_full_system(c: &mut Criterion) {
 }
 
 // 📊 Memory usage benchmarks
-fn bench_memory_usage(c: &mut Criterion) {
-    let mut group = c.benchmark_group("memory usage");
+fn bench_memory_profile(c: &mut Criterion) {
+    let mut group = c.benchmark_group("memory_profile");
     let input = load_engineering_specs();
 
-    group.bench_function("system initialization", |b| {
-        let mut total_physical_mem: usize = 0;
-        let mut iterations: usize = 0;
-        b.iter_custom(|iters| {
-            let mut duration = Duration::ZERO;
-            for _ in 0..iters {
-                if let Some(usage) = memory_stats() {
-                    let before = usage.physical_mem;
-                    let start = std::time::Instant::now();
-                    black_box(BridgeCalibrator::new(&input).unwrap());
-                    duration += start.elapsed();
-                    let after = memory_stats().unwrap().physical_mem;
-                    total_physical_mem += after - before;
-                    iterations += 1;
-                }
-            }
-            //          println!(
-            //              "Average memory increase: {} bytes",
-            //              total_physical_mem / iterations
-            //          );
-            duration / iters as u32
+    // Simpler memory profiling that measures total memory impact
+    group.bench_function("memory_usage", |b| {
+        // Warm up the system
+        let _ = BridgeCalibrator::new(&input).unwrap();
+
+        b.iter(|| {
+            let calibrator = BridgeCalibrator::new(&input).unwrap();
+            black_box(calibrator.calculate_advanced_stress())
         });
+
+        // After benchmark, report current memory state
+        if let Some(usage) = memory_stats() {
+            println!("\nFinal memory state:");
+            println!("Physical memory: {} MB", usage.physical_mem / 1024 / 1024);
+            let virtual_mem = usage.virtual_mem;
+            println!("Virtual memory: {} MB", virtual_mem / 1024 / 1024);
+        }
     });
 
     group.finish();
@@ -126,6 +120,6 @@ criterion_group!(
     bench_equation_parsing,
     bench_calibration_checks,
     bench_full_system,
-    bench_memory_usage
+    bench_memory_profile
 );
 criterion_main!(benches);

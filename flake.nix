@@ -41,7 +41,10 @@
             rustVersion = "stable";
             # Example configuration:
             # withTools =[]; # Will be prefixed with cargo-
-            extraPackages = [ pkgs.linuxPackages.perf ];
+            extraPackages = [
+              pkgs.linuxPackages.perf
+              pkgs.heaptrack
+            ];
             # ide.type = "none";
           };
 

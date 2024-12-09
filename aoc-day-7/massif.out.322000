@@ -1,0 +1,1169 @@
+desc: (none)
+cmd: ./target/release/aoc-day-7
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=118274070
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=peak
+n6: 1686976 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1417176 0x113724: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 1417176 0x113A8A: aoc_day_7::BridgeCalibrator::calculate_advanced_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 1417176 0x1126D5: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 1417176 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 1417176 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 1417176 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 1417176 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n0: 57640 in 33 places, all below massif's threshold (1.00%)
+ n2: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n0: 15616 in 5 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+#-----------
+snapshot=2
+#-----------
+time=282067479
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=517761849
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=673952655
+mem_heap_B=427264
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=837791866
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=978528761
+mem_heap_B=322288
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1212368919
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1354355013
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1585927586
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1780818881
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1686976 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1417176 0x113724: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 1417176 0x113A8A: aoc_day_7::BridgeCalibrator::calculate_advanced_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 1417176 0x1126D5: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 1417176 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 1417176 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 1417176 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 1417176 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n0: 57640 in 33 places, all below massif's threshold (1.00%)
+ n2: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n0: 15616 in 5 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+#-----------
+snapshot=11
+#-----------
+time=1936608181
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1686976 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1417176 0x113724: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 1417176 0x113A8A: aoc_day_7::BridgeCalibrator::calculate_advanced_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 1417176 0x1126D5: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 1417176 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 1417176 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 1417176 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 1417176 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n0: 57640 in 33 places, all below massif's threshold (1.00%)
+ n2: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n0: 15616 in 5 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+#-----------
+snapshot=12
+#-----------
+time=2167076338
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2366806785
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1686976 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1417176 0x113724: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 1417176 0x113A8A: aoc_day_7::BridgeCalibrator::calculate_advanced_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 1417176 0x1126D5: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 1417176 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 1417176 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 1417176 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 1417176 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n0: 57640 in 33 places, all below massif's threshold (1.00%)
+ n2: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n0: 15616 in 5 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+#-----------
+snapshot=14
+#-----------
+time=2487771546
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2652420964
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2760394600
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=2942860173
+mem_heap_B=427264
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=3065410133
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=3237924506
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=3388141415
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=3510602202
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=3626306460
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=3782037496
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=3913681897
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=4038144406
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=4199057865
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=4400304357
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=4612807341
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1686976 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 1417176 0x113724: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 1417176 0x113A8A: aoc_day_7::BridgeCalibrator::calculate_advanced_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 1417176 0x1126D5: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 1417176 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 1417176 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 1417176 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 1417176 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n0: 57640 in 33 places, all below massif's threshold (1.00%)
+ n2: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n0: 15616 in 5 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+#-----------
+snapshot=29
+#-----------
+time=4786220848
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=5017127341
+mem_heap_B=742184
+mem_heap_extra_B=12304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=5249729550
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=5434641149
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=5550759246
+mem_heap_B=427264
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=5673043757
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=5788043046
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=5933208962
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=6164108933
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=6336828914
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=6541563390
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=detailed
+n9: 269792 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n4: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n1: 6144 0x11A3AD: crossbeam_deque::deque::Worker<T>::new_fifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 6144 0x11BEA7: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 6144 0x118D0D: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 6144 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 6144 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 6144 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 6144 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 6144 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 6144 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 6144 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 6144 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 6144 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n1: 6144 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+               n0: 6144 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 6144 0x11A4CD: crossbeam_deque::deque::Worker<T>::new_lifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 6144 0x11BCC9: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 6144 0x118CBB: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 6144 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 6144 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 6144 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 6144 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 6144 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 6144 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 6144 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 6144 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 6144 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n1: 6144 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+               n0: 6144 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 3328 in 3 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+ n1: 16384 0x11A341: crossbeam_deque::deque::Worker<T>::new_fifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 16384 0x11BEA7: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 16384 0x118D0D: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 16384 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 16384 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 16384 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 16384 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 16384 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 16384 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 16384 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 16384 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 16384 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 16384 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n0: 16384 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n1: 16384 0x11A461: crossbeam_deque::deque::Worker<T>::new_lifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 16384 0x11BCC9: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 16384 0x118CBB: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 16384 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 16384 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 16384 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 16384 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 16384 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 16384 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 16384 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 16384 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 16384 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 16384 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n0: 16384 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n0: 12064 in 30 places, all below massif's threshold (1.00%)
+ n1: 8192 0x141AA1: std::sync::once::Once::call_once_force::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 8192 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 8192 0x111086: std::sync::once_lock::OnceLock<T>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 8192 0x13DCDB: std::io::stdio::stdin (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 8192 0x11260E: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 8192 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 8192 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 8192 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 8192 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n1: 4608 0x4010AD2: allocate_dtv (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/ld-linux-x86-64.so.2)
+  n1: 4608 0x40115D1: _dl_allocate_tls (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/ld-linux-x86-64.so.2)
+   n1: 4608 0x4907838: pthread_create@@GLIBC_2.34 (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+    n1: 4608 0x144ED1: std::sys::pal::unix::thread::Thread::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 4608 0x11C939: std::thread::Builder::spawn_unchecked (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n2: 4608 0x118A69: <rayon_core::registry::DefaultSpawn as rayon_core::registry::ThreadSpawn>::spawn (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 4320 0x1198A6: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 4320 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 4320 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 4320 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 4320 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 4320 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 4320 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n1: 4320 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+               n1: 4320 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+                n1: 4320 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+                 n1: 4320 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+                  n0: 4320 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 288 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=40
+#-----------
+time=6714062287
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=6872322313
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=6987321049
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=7160479762
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=detailed
+n9: 742192 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 472392 0x113724: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 472392 0x113A8A: aoc_day_7::BridgeCalibrator::calculate_advanced_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 472392 0x1126D5: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 472392 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 472392 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 472392 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 472392 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n2: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n0: 15616 in 5 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+ n0: 16680 in 30 places, all below massif's threshold (1.00%)
+ n1: 16384 0x11A341: crossbeam_deque::deque::Worker<T>::new_fifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 16384 0x11BEA7: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 16384 0x118D0D: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 16384 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 16384 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 16384 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 16384 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 16384 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 16384 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 16384 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 16384 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 16384 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 16384 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n0: 16384 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n1: 16384 0x11A461: crossbeam_deque::deque::Worker<T>::new_lifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 16384 0x11BCC9: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 16384 0x118CBB: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 16384 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 16384 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 16384 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 16384 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 16384 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 16384 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 16384 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 16384 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 16384 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 16384 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n0: 16384 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n1: 8192 0x141AA1: std::sync::once::Once::call_once_force::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 8192 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 8192 0x111086: std::sync::once_lock::OnceLock<T>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 8192 0x13DCDB: std::io::stdio::stdin (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 8192 0x11260E: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 8192 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 8192 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 8192 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 8192 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+#-----------
+snapshot=44
+#-----------
+time=7289326284
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=7408484860
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=7569152943
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=7765007995
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=7880012553
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=8069736013
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=8230461105
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=8338434853
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=8446412100
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=8554815884
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=8687048136
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=8795022276
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=9016574900
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=9124554142
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=detailed
+n9: 742192 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 472392 0x113724: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 472392 0x113A8A: aoc_day_7::BridgeCalibrator::calculate_advanced_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 472392 0x1126D5: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 472392 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 472392 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 472392 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n0: 472392 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 102592 0x115FEC: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n2: 102592 0x10F117: alloc::raw_vec::RawVecInner<A>::reserve::do_reserve_and_handle (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 69824 0x115B66: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 69824 0x1130E2: <aoc_day_7::BridgeEquation as core::str::traits::FromStr>::from_str (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n2: 69824 0x11545A: <core::iter::adapters::map::Map<I,F> as core::iter::traits::iterator::Iterator>::try_fold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 69760 0x115D28: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 69760 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 69760 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 69760 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 69760 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 69760 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n0: 69760 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n0: 64 in 1 place, below massif's threshold (1.00%)
+   n1: 32768 0x115D87: <alloc::vec::Vec<T> as alloc::vec::spec_from_iter::SpecFromIter<T,I>>::from_iter (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x11391F: aoc_day_7::BridgeCalibrator::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x112643: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n2: 52480 0x14263D: __rdl_alloc (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 36864 0x11E4F3: crossbeam_epoch::collector::Collector::register (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 36864 0x10FCA7: std::sys::thread_local::native::lazy::Storage<T,D>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 36864 0x11A6A7: crossbeam_deque::deque::Stealer<T>::steal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 36864 0x10F73A: rayon_core::registry::WorkerThread::wait_until_cold (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 36864 0x118751: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 36864 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 36864 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 36864 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 36864 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+           n0: 36864 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+  n0: 15616 in 5 places, all below massif's threshold (1.00%)
+ n2: 32768 0x12A651: alloc::raw_vec::finish_grow (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 32768 0x13EF28: std::io::default_read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 32768 0x13D441: <std::io::buffered::bufreader::BufReader<R> as std::io::Read>::read_to_end (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 32768 0x13DE6D: <std::io::stdio::StdinLock as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 32768 0x13DD37: <std::io::stdio::Stdin as std::io::Read>::read_to_string (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 32768 0x112623: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 32768 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 32768 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 32768 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n0: 32768 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 24320 0x119D55: <rayon_core::registry::WorkerThread as core::convert::From<rayon_core::registry::ThreadBuilder>>::from (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 24320 0x11867B: rayon_core::registry::ThreadBuilder::run (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 24320 0x11DEE9: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 24320 0x11CC4B: core::ops::function::FnOnce::call_once{{vtable.shim}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 24320 0x14509A: std::sys::pal::unix::thread::Thread::new::thread_start (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 24320 0x4906D01: start_thread (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+       n0: 24320 0x4986193: clone (in /nix/store/pacbfvpzqz2mksby36awvbcn051zcji3-glibc-2.40-36/lib/libc.so.6)
+ n0: 16680 in 30 places, all below massif's threshold (1.00%)
+ n1: 16384 0x11A341: crossbeam_deque::deque::Worker<T>::new_fifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 16384 0x11BEA7: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 16384 0x118D0D: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 16384 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 16384 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 16384 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 16384 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 16384 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 16384 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 16384 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 16384 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 16384 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 16384 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n0: 16384 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n1: 16384 0x11A461: crossbeam_deque::deque::Worker<T>::new_lifo (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 16384 0x11BCC9: core::iter::traits::iterator::Iterator::unzip (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 16384 0x118CBB: rayon_core::registry::Registry::new (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 16384 0x1174A4: std::sync::once::Once::call_once::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 16384 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 16384 0x118B8E: rayon_core::registry::global_registry (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 16384 0x11B160: rayon_core::current_num_threads (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 16384 0x1137FB: aoc_day_7::BridgeEquation::is_calibratable (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n1: 16384 0x113A27: aoc_day_7::BridgeCalibrator::calculate_basic_stress (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+          n1: 16384 0x112675: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+           n1: 16384 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+            n1: 16384 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+             n1: 16384 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+              n0: 16384 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+ n1: 8192 0x141AA1: std::sync::once::Once::call_once_force::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+  n1: 8192 0x111722: std::sys::sync::once::futex::Once::call (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+   n1: 8192 0x111086: std::sync::once_lock::OnceLock<T>::initialize (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+    n1: 8192 0x13DCDB: std::io::stdio::stdin (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+     n1: 8192 0x11260E: aoc_day_7::main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+      n1: 8192 0x112482: std::sys::backtrace::__rust_begin_short_backtrace (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+       n1: 8192 0x112478: std::rt::lang_start::{{closure}} (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+        n1: 8192 0x13A56D: std::rt::lang_start_internal (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+         n0: 8192 0x1128B4: main (in /home/rrrodzilla/Projects/advent_of_code/aoc-day-7/target/release/aoc-day-7)
+#-----------
+snapshot=58
+#-----------
+time=9290020582
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=9414398625
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=9522373092
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=9630346937
+mem_heap_B=742192
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=9738343101
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=10002262116
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=10235478985
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=10377630275
+mem_heap_B=269792
+mem_heap_extra_B=12288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=10485604766
+mem_heap_B=1686976
+mem_heap_extra_B=12336
+mem_stacks_B=0
+heap_tree=empty
