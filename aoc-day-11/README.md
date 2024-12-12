@@ -4,6 +4,8 @@ A highly sophisticated analysis system for observing and predicting the behavior
 of ancient Plutonian artifacts, powered by recursively optimized transformation
 algorithms.
 
+![Made with VHS](https://vhs.charm.sh/vhs-3mivZoiZh4bxybNfKCFAhz.gif)
+
 ## 🪨 The Story
 
 Deep in the infinite corridors of Pluto's ancient civilization, you've

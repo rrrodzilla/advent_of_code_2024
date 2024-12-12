@@ -2,19 +2,24 @@ use std::collections::HashMap;
 use std::io::{self, Read};
 
 fn main() -> io::Result<()> {
+    let redact = std::env::args().any(|arg| arg == "--redact");
     let mut input = String::new();
     io::stdin().read_to_string(&mut input)?;
     let stones: Vec<String> = input.split_whitespace().map(|s| s.to_string()).collect();
     let mut stone_memory = HashMap::new(); // Ancient cache of previously observed stone states
     for (blinks, phase) in [(25, "Phase 1"), (75, "Phase 2")] {
+        let result = stones
+            .iter()
+            .map(|stone| observe_stone_transformations(stone, blinks, &mut stone_memory))
+            .sum::<usize>();
+        let display_value = if redact {
+            "*****".to_string()
+        } else {
+            result.to_string()
+        };
         println!(
             "\n✨ 🌌 Cosmic Phase {} (after {} blinks): {}",
-            phase,
-            blinks,
-            stones
-                .iter()
-                .map(|stone| observe_stone_transformations(stone, blinks, &mut stone_memory))
-                .sum::<usize>()
+            phase, blinks, display_value
         );
         stone_memory.clear();
     }
