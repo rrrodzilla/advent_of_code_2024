@@ -44,6 +44,7 @@
             extraPackages = [
               pkgs.linuxPackages.perf
               pkgs.heaptrack
+              pkgs.tokei
             ];
             # ide.type = "none";
           };
